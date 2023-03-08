@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index(): View
     {
-        return view('posts.index');
+        return view('posts.index',[
+            'posts' => Post::latest()->with(['user'])->paginate(5), // later add also likes
+        ]);
     }
 
     /**
@@ -28,7 +30,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request):RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
