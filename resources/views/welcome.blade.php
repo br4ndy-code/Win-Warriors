@@ -16,11 +16,10 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+        <x-app-layout>
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -30,24 +29,17 @@
                     @endauth
                 </div>
             @endif
-            <x-app-layout>
-                <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-                    <div class="mt-6 bg-white shadow-sm rounded-lg divide-y w-50 ">
-                        <div class="p-6 flex space-x-2 flex-col">
-                            &emsp; Welcome to my website where you can share your daily achievements with the world and inspire others to do the same.<br>Whether it's a small victory or a big accomplishment, I believe that every success deserves to be celebrated. By posting your achievements, you not only give yourself a pat on the back but also motivate others to strive towards their goals.<br> Join us in spreading positivity and creating a supportive community where everyone can feel proud of their progress!
+            <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+                <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
+                    <div class="p-6 flex space-x-2 flex-col">
+                        &emsp; Welcome to my website where you can share your daily achievements with the world and inspire others to do the same.<br>Whether it's a small victory or a big accomplishment, I believe that every success deserves to be celebrated. By posting your achievements, you not only give yourself a pat on the back but also motivate others to strive towards their goals.<br> Join us in spreading positivity and creating a supportive community where everyone can feel proud of their progress!
 
-                            <div class="mt-5 flex justify-center">
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-white dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 bg-black p-1 rounded">Try it now</a>
-                            </div>
+                        <div class="mt-5 flex justify-center">
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-white dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 bg-black p-1 rounded">Try it now</a>
                         </div>
                     </div>
                 </div>
-            </x-app-layout>
-            {{-- <div class="mt-6 bg-white shadow-sm rounded-lg divide-y w-50">
-                <div class="p-6 flex space-x-2 ">
-                    &emsp; Welcome to my website where you can share your daily achievements with the world and inspire others to do the same.<br>Whether it's a small victory or a big accomplishment, I believe that every success deserves to be celebrated. By posting your achievements, you not only give yourself a pat on the back but also motivate others to strive towards their goals.<br> Join us in spreading positivity and creating a supportive community where everyone can feel proud of their progress!
-                </div>
-            </div> --}}
-        </div>
+            </div>
+        </x-app-layout>
     </body>
 </html>
