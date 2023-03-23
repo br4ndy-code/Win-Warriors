@@ -43,6 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    
+    /* 
+    A one-to-many relationship is used to define relationships where a single model is the parent to one or more child models. 
+    */
+    
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);

@@ -36,6 +36,8 @@ class PostController extends Controller
             'message' => 'required|string|max:255',
         ]);
 
+        // add a record which will be belong to the logged in user
+        // by leveraging a post relationship
         $request->user()->posts()->create($validated);
 
         return redirect(route('posts.index'));
