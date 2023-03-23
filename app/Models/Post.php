@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
-    // use HasFactory;
+    use HasFactory;
 
-    // protected $fillable = [
-    //     'message',
-    // ];
+    protected $fillable = [
+        'message',
+    ];
 
-    // public function user(): BelongsTo
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
