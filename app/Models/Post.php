@@ -13,7 +13,7 @@ class Post extends Model
     protected $fillable = [
         'message',
     ];
-
+    // Get the author of the post
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', [DashboardController::class, 'index'], function () {
     return view('dashboard');})
     ->middleware(['auth', 'verified'])
     ->name('dashboard');

@@ -13,9 +13,10 @@ class PostController extends Controller
      * Display a listing of the resource.
      */
     public function index(): View
-    {
+    { 
         return view('posts.index',[
-            'posts' => Post::latest()->with(['user'])->paginate(5), 
+            // 'posts' => Post::where('user_id', auth()->user()->id)->paginate(5),
+            'posts' => Post::with(['user'])->latest()->paginate(5), 
         ]);
     }
 
