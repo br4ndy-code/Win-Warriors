@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome');})->name('welcome');
 
 Route::get('/dashboard', [DashboardController::class, 'index'], function () {
     return view('dashboard');})
