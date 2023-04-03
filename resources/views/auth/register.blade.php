@@ -1,7 +1,12 @@
 <x-guest-layout>
+    <!-- Logo -->
+    <div class="shrink-0 flex justify-center items-center">
+        <a href="{{ route('welcome') }}">
+            <img src="{{ asset('images/logo.svg') }}" alt="Logo">
+        </a>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />

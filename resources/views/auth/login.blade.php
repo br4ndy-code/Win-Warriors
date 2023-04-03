@@ -1,8 +1,8 @@
 <x-guest-layout>
-    {{-- Logo --}}
-    <div class="shrink-0 flex items-center justify-center">
+    <!-- Logo -->
+    <div class="shrink-0 flex justify-center items-center">
         <a href="{{ route('welcome') }}">
-            <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+            <img src="{{ asset('images/logo.svg') }}" alt="Logo">
         </a>
     </div>
     <!-- Session Status -->
