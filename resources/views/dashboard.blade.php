@@ -5,7 +5,7 @@
         </h2>
         <p class="mt-2">Posted: {{ $posts->count() }} {{ Str::plural('post', $posts->count()) }} </p>
     </x-slot>
-    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8 h-screen">
         @foreach ($posts as $post)
                 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
                     <div class="p-6 flex space-x-2">
